@@ -28,16 +28,16 @@ public class Selection
       min = arr[j];
       minIndex = j;
       temp = arr[j];
-      for (int j = i; j < n - 1; j++) {
+      for (j = i; j < n - 1; j++) {
         if (min > arr[j + 1])
         {
             min = arr[j + 1];
-            minIndex = j + 1
+            minIndex = j + 1;
         }
       }
       arr[i] = min;
       arr[minIndex] = temp;
-      system.out.println(arr[i])
+      System.out.println(arr[i]);
     }
     return arr;
   }
