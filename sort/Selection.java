@@ -15,8 +15,31 @@ public class Selection
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
-    // Your algorithm goes here!
-    
+    // Your algorithm goes here 
+    // j is equal to the position we start at.
+    // min 
+    int j;
+    int min;
+    int temp;
+    int minIndex;
+    int n = arr.length;
+    for (int i = 0; i < n - 1; i++) {
+      j = i;
+      min = arr[j];
+      minIndex = j;
+      temp = arr[j];
+      for (int j = i; j < n - 1; j++) {
+        if (min > arr[j + 1])
+        {
+            min = arr[j + 1];
+            minIndex = j + 1
+        }
+      }
+      arr[i] = min;
+      arr[minIndex] = temp;
+      system.out.println(arr[i])
+    }
+    return arr;
   }
   
   public static void main(String[] args) {
