@@ -12,12 +12,56 @@ public class Binary
   /**
    * Returns the index of the target value, or -1 if not found
    */
+    public static int[] sort(int[] arr) {
+    // Your algorithm goes here 
+    // j is equal to the position we start at.
+    // min 
+    int j;
+    int min;
+    int temp;
+    int minIndex;
+    int n = arr.length;
+    for (int i = 0; i < n - 1; i++) {
+      j = i;
+      min = arr[j];
+      minIndex = j;
+      temp = arr[j];
+      for (j = i; j < n - 1; j++) {
+        if (min > arr[j + 1])
+        {
+            min = arr[j + 1];
+            minIndex = j + 1;
+        }
+      }
+      arr[i] = min;
+      arr[minIndex] = temp;
+    }
+    return arr;
+  }
+  
+  
+  
   public static int search(int[] arr, int target) {
     // Your algorithm goes here!
     // Note... I know that the standard Java Arrays class has a method called
     // binarySearch.  If you use it for testing, but you need to implement the algorithm
     // to get the point!
-    
+    int low = 0;
+    int high = arr.length - 1;
+    while (low <= high) {
+      int mid = (low + high)/2;
+      if (arr[mid] = target)
+      {
+           return mid;
+      }
+      else if (target < arr[mid]) {
+        high = mid - 1;
+      }
+      else {
+        low = mid + 1;
+      }
+    }
+  return -1;
   }
   
   public static void main(String[] args) {
