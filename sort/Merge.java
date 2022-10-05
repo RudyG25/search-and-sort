@@ -17,26 +17,29 @@ public class Merge
   public static int[] sort(int[] arr) {
     // Your algorithm goes here!
     int n = arr.length;
-    if (n > 1) {
-        int middle = n/2;
-        int leftLength = middle;
-        int rightLength = n - leftLength;
-        int index;
-        for (index = 0; index < middle; index++)
-        {
-            int[] left = {arr[index]};
-        }
-        int rightIndex = 0;
-        index = middle;
-        for (index = middle + 1; index < n; index++) {
-            
-        }
-        MergeSort(left);
-        MergeSort(right);
-        MergeSort(arr, left, right);
+    if (n <= 1) {
+        return null;
     }
+    int middle = n/2;
+    int leftLength = middle;
+    int rightLength = n - leftLength;
+    int index = 0;
+    int[] left = {};
+    for (index = 0; index < middle; index++) {
+        left[index] = arr[index];
+    }
+    int rightIndex = 0;
+    int[] right = {};
+    for (index = middle; index < n; index++) {
+        right[rightIndex] = arr[index];
+        rightIndex++;
+    }
+    sort(left);
+    sort(right);
+    return arr;
     
   }
+  
   
   public static void main(String[] args) {
     int[] arr = {53,85,93,25,39,27,42,5,24,45,33,51,5,80,4,7,91,
